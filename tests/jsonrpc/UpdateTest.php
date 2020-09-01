@@ -61,7 +61,8 @@ class UpdateTest extends TestCase
         $this->assertEquals(
             [[
                 'name' => 'test',
-                'description' => 'is ok'
+                'description' => 'is ok',
+                'value' => 'true'
             ]],
             $result,
             'Incorrect result: ' . print_r($result, true)
