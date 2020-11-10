@@ -33,7 +33,7 @@ class Update extends OperationRunner
             throw new MissedOrUnknown('primary key method "' . $pkMethod . '"', 500);
         }
 
-        $exist = $repo->one([IHasName::FIELD__NAME => $item->$pkMethod()]);
+        $exist = $repo->one([$repo->getPk() => $item->$pkMethod()]);
 
         if (!$exist) {
             throw new MissedOrUnknown($op->getItemName(), 404);
